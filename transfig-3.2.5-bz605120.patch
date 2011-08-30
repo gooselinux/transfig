@@ -1,0 +1,14 @@
+diff --git a/fig2dev/dev/genemf.c b/fig2dev/dev/genemf.c
+index 3485a11..018e1bb 100644
+--- a/fig2dev/dev/genemf.c
++++ b/fig2dev/dev/genemf.c
+@@ -2169,7 +2169,8 @@ static void rotated_ellipse(e)
+     if (sizeof (F_line) < sizeof(F_ellipse)) {
+ 	l = *(F_line *) e;
+     } else {
+-	*(F_ellipse *)(void *) &l = *e;
++	void *ptr = &l;
++	*(F_ellipse *)ptr = *e;
+     }
+ 
+     /* setup other fields */

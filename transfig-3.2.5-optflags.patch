@@ -1,0 +1,12 @@
+diff -up transfig.3.2.5/Imakefile~ transfig.3.2.5/Imakefile
+--- transfig.3.2.5/Imakefile~	2003-03-25 22:48:02.000000000 +0200
++++ transfig.3.2.5/Imakefile	2009-05-04 22:12:20.000000000 +0300
+@@ -22,7 +22,7 @@ XCOMM to make transfig and fig2dev:
+ XCOMM type "xmkmf", "make Makefiles", "make" then "make install"
+ 
+ #define IHaveSubdirs
+-#define PassCDebugFlags 'CDEBUGFLAGS=$(CDEBUGFLAGS)'
++#define PassCDebugFlags 'CDEBUGFLAGS=$(CDEBUGFLAGS) $(RPM_OPT_FLAGS)'
+ 
+ DEPLIBS =
+ SUBDIRS = fig2dev transfig

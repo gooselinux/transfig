@@ -1,0 +1,12 @@
+diff -Naur transfig.3.2.5-modularX/fig2dev/Imakefile transfig.3.2.5/fig2dev/Imakefile
+--- transfig.3.2.5-modularX/fig2dev/Imakefile	2008-11-26 10:02:04.000000000 +0100
++++ transfig.3.2.5/fig2dev/Imakefile	2008-11-26 10:02:55.000000000 +0100
+@@ -229,7 +229,7 @@
+ 	else (set -x; $(MKDIRHIER) $(DESTDIR)$(XFIGLIBDIR)/bitmaps ); fi ; \
+ 	echo Copying bitmap files for tk to $(DESTDIR)$(XFIGLIBDIR)/bitmaps ; \
+ 	for f in * ; do \
+-	      $(INSTALL) -c $$f $(DESTDIR)$(XFIGLIBDIR)/bitmaps ; \
++	      $(INSTALL) -c $(INSTDATFLAGS) $$f $(DESTDIR)$(XFIGLIBDIR)/bitmaps ; \
+ 	done) ; 
+ 
+ install.all::
